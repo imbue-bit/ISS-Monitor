@@ -1,0 +1,82 @@
+*******************************************************************************
+*                                                                             *
+*   _____  _____  _____   __  __  ____  _   _  _____  _____  ____  ____       *
+*  |_   _|/ ____|/ ____| |  \/  |/ __ \| \ | ||_   _||_   _|/ __ \|  _ \      *
+*    | | | (___ | (___   | \  / | |  | |  \| |  | |    | | | |  | | |_) |     *
+*    | |  \___ \ \___ \  | |\/| | |  | | . ` |  | |    | | | |  | |  _ <      *
+*   _| |_ ____) |____) | | |  | | |__| | |\  | _| |_  _| |_| |__| | | \ \     *
+*  |_____|_____/|_____/  |_|  |_|\____/|_| \_||_____||_____\____/|_|  \_\    *
+*                                                                             *
+*******************************************************************************
+
+[ 1. OVERVIEW ]
+
+    ISS-Monitor is a lightweight, web-based orbital visualization tool 
+    designed to track the International Space Station (ISS) in real-time.
+    The system utilizes SGP4 propagation algorithms to calculate the 
+    precise location of the station based on TLE data.
+
+[ 2. FEATURES ]
+
+    - Real-time 3D Earth visualization using Three.js.
+    - Automated TLE fetching via Heavens-Above proxy.
+    - Atmospheric scattering shader effects (Rayleigh simulation).
+    - Dynamic orbital path prediction (95-minute window).
+    - HUD overlay displaying Latitude, Longitude, and Camera status.
+    - Post-processing: UnrealBloomPass for high-intensity sun reflection.
+
+[ 3. SYSTEM REQUIREMENTS ]
+
+    - A modern web browser with WebGL support (Netscape 6.0+ NOT supported).
+    - Active internet connection for fetching remote assets and TLE data.
+    - Minimum 128MB VRAM recommended for smooth 60FPS rendering.
+
+
+[ 4. INSTALLATION / USAGE ]
+
+    This project is distributed as a standalone "Single-File" application.
+    No compilation is required.
+
+    1. Clone the repository:
+       $ git clone https://github.com/imbue-bit/iss-monitor.git
+
+    2. Navigate to the directory:
+       $ cd iss-monitor
+
+    3. Open 'index.html' in your browser:
+       $ start index.html  # Windows
+       $ open index.html   # macOS
+
+    NOTE: Due to CORS restrictions on some TLE providers, a proxy service
+    (allorigins.win) is used by default in the source code.
+
+
+[ 5. TECHNICAL SPECIFICATIONS ]
+
+    - Engine: Three.js r128
+    - Physics: satellite.js 4.0.0
+    - Textures: 2K Blue Marble / Topology / Clouds
+    - Coordinate System: ECI (Earth-Centered Inertial) to Geodetic
+
+[ 6. DIRECTORY STRUCTURE ]
+
+    .
+    ├── index.html        <-- Main application logic and shaders
+    └── README            <-- This file
+
+[ 7. KNOWN BUGS / TO-DO ]
+
+    - [FIXED] Earth rotation sync with GMST (Greenwich Mean Sidereal Time).
+    - [TODO] Add support for tracking multiple satellites simultaneously.
+    - [TODO] Implement mobile touch controls for OrbitControls.
+
+[ 8. CREDITS ]
+
+    - NASA for Earth imagery.
+    - The Three.js community for the rendering engine.
+    - Space-Track / Heavens-Above for orbital data.
+
+-------------------------------------------------------------------------------
+"Keep your eyes on the stars, and your feet on the ground."
+-------------------------------------------------------------------------------
+EOF
